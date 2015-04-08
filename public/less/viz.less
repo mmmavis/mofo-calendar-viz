@@ -1,0 +1,318 @@
+// Colours
+@import "colours";
+
+
+@month-col-width: 60px;
+@viz-bg: #ECF4F5;
+@row-height: 18px;
+@tier-border-width: 2px;
+
+@dark-grey: #494F5B;
+
+@tier-1: #31648F;
+@tier-2: #327BB8;
+@tier-3: #60A2D1;
+@tier-4: #92BCD6;
+
+@arc-odd: #7EBDBD;
+@arc-even: #52A1A2;
+
+@row-hover: #99DDDE;
+
+/* Viz section ================= */
+
+#viz-section {
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  padding-bottom: 50px;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .header {
+    background: #FFF;
+    color: @dark-grey;
+  }
+
+  #viz.row {
+    margin-left: 0;
+    margin-right: 0; /* remove the preset margin since this is full width row */
+  }
+
+  #viz {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: 12px;
+    td, th {
+      padding: 0;
+    }
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .centered-container {
+    display: table;
+    margin: 0 auto;
+  }
+
+  #left-container {
+    float: left;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  #right-container {
+    float: left;
+
+    #calendar-viz-tier {
+      float: left;
+      width: 5%;
+      width: ~"calc(20px - 0px)";
+      position: relative;
+      top: calc( 2* @row-height + @tier-border-width);
+    }
+
+    #calendar-viz {
+      float: left;
+      width: 95%;
+      width: ~"calc(100% - 20px)";
+    }
+  }
+
+  @media( max-width: 768px ){
+    #left-container {
+      float: left;
+      width: 100%;
+      #description-box {
+        .desktop-instruction {
+          display: none;
+        }
+      }
+    }
+
+    #right-container {
+      float: left;
+      width: 100%;
+      #viz-container {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      #calendar-viz {
+        thead th:not(.event-name),
+        tbody td:not(.event-name) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .hidden{
+    display: none;
+  }
+
+  /* Viz ============================= */
+
+  #calendar-viz-tier {
+    div:hover {
+      cursor: pointer;
+    }
+    .tier-header {
+      .text-center;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 20px;
+      color: #FFF;
+      border-bottom: @tier-border-width solid #FFF;
+      font-weight: bold;
+    }
+    .tier-header[data-tier='1'] {
+      background: @tier-1;
+    }
+    .tier-header[data-tier='2'] {
+      background: @tier-2;
+    }
+    .tier-header[data-tier='3'] {
+      background: @tier-3;
+    }
+    .tier-header[data-tier='4'] {
+      background: @tier-4;
+    }
+  }
+
+  #calendar-viz {
+    position: relative;
+    border-collapse: collapse;
+    thead {
+      text-transform: uppercase;
+      .arc {
+        .text-center;
+        float: left;
+        color: #FFF;
+      }
+      #mozilla-arc{
+        width: @month-col-width;
+        background: @arc-odd;
+      }
+      #privacy-arc-1 {
+        width: @month-col-width;
+        background: @arc-even;
+      }
+      #education-arc {
+        width: @month-col-width * 6.5;
+        background: @arc-odd;
+      }
+      #privacy-arc-2 {
+        width: @month-col-width * 2;
+        background: @arc-even;
+      }
+      #eoy-arc {
+        width: @month-col-width * 1.5;
+        background: @arc-odd;
+      }
+    }
+    tr {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      height: @row-height;
+    }
+    tbody tr:hover {
+      background: @row-hover;
+    }
+    tr.tier-divider {
+      border-bottom: @tier-border-width dashed #FFF;
+    }
+    .row-hover {
+      background: @row-hover !important;
+      color: #FFF !important;
+    }
+    tbody td.row-hover {
+      border: none;
+      .dot {
+        background: #FFF !important;
+      }
+    }
+    th {
+      font-weight: normal;
+    }
+    th, td {
+      text-align: center;
+    }
+    td.month {
+      width: @month-col-width;
+      background: @viz-bg;
+    }
+    tbody tr.selected {
+      background: rgba(255,255,255,0.2);
+    }
+    thead th.event-name,
+    tbody td.event-name {
+      text-align: left;
+      padding-left: 15px;
+    }
+    tbody {
+      tr[data-tier='1'] {
+        color: @tier-1;
+      }
+      tr[data-tier='2'] {
+        color: @tier-2;
+      }
+      tr[data-tier='3'] {
+        color: @tier-3;
+      }
+      tr[data-tier='4'] {
+        color: @tier-4;
+      }
+    }
+    tbody td.marked .dot {
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      margin: 0 auto;
+    }
+    tbody td {
+      border-right: 2px solid #FFF;
+    }
+    tbody tr[data-tier='1'] td.marked .dot {
+      background: @tier-1;
+    }
+    tbody tr[data-tier='2'] td.marked .dot {
+      background: @tier-2;
+    }
+    tbody tr[data-tier='3'] td.marked .dot {
+      background: @tier-3;
+    }
+    tbody tr[data-tier='4'] td.marked .dot {
+      background: @tier-4;
+    }
+    tbody td.event-name:hover,
+    tbody td.marked .dot:hover {
+      cursor: pointer;
+    }
+  }
+
+
+  /* Description box ============================= */
+
+  #description-box {
+    margin-top: @row-height;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid @body-blue;
+    h4 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+  }
+
+  #event-details {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  #event-details li {
+    margin-bottom: 5px;
+  }
+
+  #event-details .desc-label {
+    text-transform: capitalize;
+    font-weight: 800;
+    margin-right: 10px;
+  }
+
+  #event-details .desc-label::after {
+    content: ":";
+  };
+
+  #tier-description {
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+      .tier-number {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .tier-1 {
+        color: @tier-1;
+      }
+      .tier-2 {
+        color: @tier-2;
+      }
+      .tier-3 {
+        color: @tier-3;
+      }
+      .tier-4 {
+        color: @tier-4;
+      }
+    }
+  }
+
+}

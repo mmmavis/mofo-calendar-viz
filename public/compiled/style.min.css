@@ -1,0 +1,264 @@
+/* Viz section ================= */
+#viz-section {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  padding-bottom: 50px;
+  /* Viz ============================= */
+  /* Description box ============================= */
+}
+#viz-section * {
+  box-sizing: border-box;
+}
+#viz-section .header {
+  background: #FFF;
+  color: #494f5b;
+}
+#viz-section #viz.row {
+  margin-left: 0;
+  margin-right: 0;
+  /* remove the preset margin since this is full width row */
+}
+#viz-section #viz {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-size: 12px;
+}
+#viz-section #viz td,
+#viz-section #viz th {
+  padding: 0;
+}
+#viz-section .text-center {
+  text-align: center;
+}
+#viz-section .centered-container {
+  display: table;
+  margin: 0 auto;
+}
+#viz-section #left-container {
+  float: left;
+  width: 300px;
+  margin-bottom: 20px;
+}
+#viz-section #right-container {
+  float: left;
+}
+#viz-section #right-container #calendar-viz-tier {
+  float: left;
+  width: 5%;
+  width: calc(20px - 0px);
+  position: relative;
+  top: calc(38px);
+}
+#viz-section #right-container #calendar-viz {
+  float: left;
+  width: 95%;
+  width: calc(100% - 20px);
+}
+@media (max-width: 768px) {
+  #viz-section #left-container {
+    float: left;
+    width: 100%;
+  }
+  #viz-section #left-container #description-box .desktop-instruction {
+    display: none;
+  }
+  #viz-section #right-container {
+    float: left;
+    width: 100%;
+  }
+  #viz-section #right-container #viz-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #viz-section #right-container #calendar-viz thead th:not(.event-name),
+  #viz-section #right-container #calendar-viz tbody td:not(.event-name) {
+    display: none;
+  }
+}
+#viz-section .hidden {
+  display: none;
+}
+#viz-section #calendar-viz-tier div:hover {
+  cursor: pointer;
+}
+#viz-section #calendar-viz-tier .tier-header {
+  text-align: center;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 20px;
+  color: #FFF;
+  border-bottom: 2px solid #ffffff;
+  font-weight: bold;
+}
+#viz-section #calendar-viz-tier .tier-header[data-tier='1'] {
+  background: #31648f;
+}
+#viz-section #calendar-viz-tier .tier-header[data-tier='2'] {
+  background: #327bb8;
+}
+#viz-section #calendar-viz-tier .tier-header[data-tier='3'] {
+  background: #60a2d1;
+}
+#viz-section #calendar-viz-tier .tier-header[data-tier='4'] {
+  background: #92bcd6;
+}
+#viz-section #calendar-viz {
+  position: relative;
+  border-collapse: collapse;
+}
+#viz-section #calendar-viz thead {
+  text-transform: uppercase;
+}
+#viz-section #calendar-viz thead .arc {
+  text-align: center;
+  float: left;
+  color: #FFF;
+}
+#viz-section #calendar-viz thead #mozilla-arc {
+  width: 60px;
+  background: #7ebdbd;
+}
+#viz-section #calendar-viz thead #privacy-arc-1 {
+  width: 60px;
+  background: #52a1a2;
+}
+#viz-section #calendar-viz thead #education-arc {
+  width: 390px;
+  background: #7ebdbd;
+}
+#viz-section #calendar-viz thead #privacy-arc-2 {
+  width: 120px;
+  background: #52a1a2;
+}
+#viz-section #calendar-viz thead #eoy-arc {
+  width: 90px;
+  background: #7ebdbd;
+}
+#viz-section #calendar-viz tr {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 18px;
+}
+#viz-section #calendar-viz tbody tr:hover {
+  background: #99ddde;
+}
+#viz-section #calendar-viz tr.tier-divider {
+  border-bottom: 2px dashed #ffffff;
+}
+#viz-section #calendar-viz .row-hover {
+  background: #99ddde !important;
+  color: #FFF !important;
+}
+#viz-section #calendar-viz tbody td.row-hover {
+  border: none;
+}
+#viz-section #calendar-viz tbody td.row-hover .dot {
+  background: #FFF !important;
+}
+#viz-section #calendar-viz th {
+  font-weight: normal;
+}
+#viz-section #calendar-viz th,
+#viz-section #calendar-viz td {
+  text-align: center;
+}
+#viz-section #calendar-viz td.month {
+  width: 60px;
+  background: #ecf4f5;
+}
+#viz-section #calendar-viz tbody tr.selected {
+  background: rgba(255, 255, 255, 0.2);
+}
+#viz-section #calendar-viz thead th.event-name,
+#viz-section #calendar-viz tbody td.event-name {
+  text-align: left;
+  padding-left: 15px;
+}
+#viz-section #calendar-viz tbody tr[data-tier='1'] {
+  color: #31648f;
+}
+#viz-section #calendar-viz tbody tr[data-tier='2'] {
+  color: #327bb8;
+}
+#viz-section #calendar-viz tbody tr[data-tier='3'] {
+  color: #60a2d1;
+}
+#viz-section #calendar-viz tbody tr[data-tier='4'] {
+  color: #92bcd6;
+}
+#viz-section #calendar-viz tbody td.marked .dot {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin: 0 auto;
+}
+#viz-section #calendar-viz tbody td {
+  border-right: 2px solid #FFF;
+}
+#viz-section #calendar-viz tbody tr[data-tier='1'] td.marked .dot {
+  background: #31648f;
+}
+#viz-section #calendar-viz tbody tr[data-tier='2'] td.marked .dot {
+  background: #327bb8;
+}
+#viz-section #calendar-viz tbody tr[data-tier='3'] td.marked .dot {
+  background: #60a2d1;
+}
+#viz-section #calendar-viz tbody tr[data-tier='4'] td.marked .dot {
+  background: #92bcd6;
+}
+#viz-section #calendar-viz tbody td.event-name:hover,
+#viz-section #calendar-viz tbody td.marked .dot:hover {
+  cursor: pointer;
+}
+#viz-section #description-box {
+  margin-top: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8f3f8;
+}
+#viz-section #description-box h4 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+#viz-section #event-details {
+  list-style-type: none;
+  padding-left: 0;
+}
+#viz-section #event-details li {
+  margin-bottom: 5px;
+}
+#viz-section #event-details .desc-label {
+  text-transform: capitalize;
+  font-weight: 800;
+  margin-right: 10px;
+}
+#viz-section #event-details .desc-label::after {
+  content: ":";
+}
+#viz-section #tier-description ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#viz-section #tier-description ul .tier-number {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#viz-section #tier-description ul .tier-1 {
+  color: #31648f;
+}
+#viz-section #tier-description ul .tier-2 {
+  color: #327bb8;
+}
+#viz-section #tier-description ul .tier-3 {
+  color: #60a2d1;
+}
+#viz-section #tier-description ul .tier-4 {
+  color: #92bcd6;
+}

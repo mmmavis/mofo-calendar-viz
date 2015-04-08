@@ -1,0 +1,16 @@
+{
+  "name": "mofo-calendar-viz",
+  "version": "1.0.0",
+  "description": "",
+  "authro": "Mavis Ou",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/mmmavis/mofo-calendar-viz"
+  },
+  "dependencies": {
+    "grunt-contrib-less": "0.10.0"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}

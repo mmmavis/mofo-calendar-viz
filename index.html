@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MoFo Calendar Viz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/compiled/style.min.css" />
+  </head>
+  <body>
+    <div id="viz-section" class="big-section">
+      <div class="container">
+        <div class="row header">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <h1 class="text-center">MoFo 2015 Engagement Calendar</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="viz">
+        <div class="centered-container">
+          <!-- left container ===  -->
+          <div id="left-container">
+          <div id="description-box">
+            <h4 id="event-title"></h4>
+            <ul id="event-details">
+              <li class="desktop-instruction"><i class="fa fa-arrow-right fa-5"></i></li>
+              <li class="desktop-instruction">Click on the dots to read more information about each event.</li>
+              <li>Expand or minimize each engagement tier by clicking the tier number in the first column.</li>
+              <li>To add your event to this calendar, <a href="mailto: hannah@mozillafoundation.org">email Hannah Kane</a>.</li>
+            </ul>
+          </div>
+          <div id="tier-description">
+            <ul>
+              <li>
+                <span class="tier-number tier-1">Tier 1:</span>
+                Mozilla full-court press, including Firefox channels and snippet.
+              </li>
+              <li>
+                <span class="tier-number tier-2">Tier 2:</span>
+                One Mozilla, including Mozilla blog and socials media channels, but not the snippet or Firefox channels.
+              </li>
+              <li>
+                <span class="tier-number tier-3">Tier 3:</span>
+                All Foundation audiences via our networks, social media and email lists.
+              </li>
+              <li>
+                <span class="tier-number tier-4">Tier 4:</span>
+                Project or region-specific communication, freely employed at the discretion of each team.
+              </li>
+            </ul>
+            </div>
+          </div>
+          <!-- right container ===  -->
+          <div id="right-container">
+            <div id="viz-container">
+              <div id="calendar-viz-tier">
+              </div>
+              <table id="calendar-viz">
+                <thead>
+                  <tr>
+                    <th colspan="13">
+                      <div id="mozilla-arc" class="arc">Mozilla</div>
+                      <div id="privacy-arc-1" class="arc">Privacy</div>
+                      <div id="education-arc" class="arc">Education</div>
+                      <div id="privacy-arc-2" class="arc">Privacy</div>
+                      <div id="eoy-arc" class="arc">EOY</div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="public/jquery.min.js"></script>
+    <script src="public/viz.js"></script>
+  </body>
+</html>
